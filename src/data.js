@@ -8,7 +8,7 @@ let dream_journals = [
 ]
 
 let entries = [
-    {id: 1, dream_journal_id: 1, user_id: 1, content: "It was an eerie scene..."}
+    {id: 1, dream_journal_id: 1, user_id: 1, name: "Eerie",content: "It was an eerie scene..."}
 ]
 
 export { users, dream_journals, entries };
