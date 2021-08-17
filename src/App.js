@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import { users, dream_journals, entries } from './data.js';
 
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +18,6 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-          HEY!
         </a>
       </header>
     </div>
