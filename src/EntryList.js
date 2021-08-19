@@ -1,5 +1,6 @@
 import Entry from './Entry.js'
 import { useState } from 'react'
+import moment from 'moment'
 
 function EntryList({ entries }) {
     const [newEntryClicked, setNewEntryClicked] = useState(false)
@@ -10,6 +11,9 @@ function EntryList({ entries }) {
     function handleNewEntryCLick() {
         setNewEntryClicked(newEntryClicked => !newEntryClicked)
     }
+
+    const entriesSortedByDate = entries.sort((a,b) => console.log(a.date))
+
   
     return (
       <div>
