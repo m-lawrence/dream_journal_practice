@@ -1,9 +1,13 @@
 function Entry({ entry }) {
+
+    function handleEntryClick() {
+        // route to entry details page
+    }
   
     return (
       <div>
         <ul>
-            <li>{entry.name}</li>
+            <li onClick={handleEntryClick}>{entry.name}</li>
         </ul>
       </div>
     );
