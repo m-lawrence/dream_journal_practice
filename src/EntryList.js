@@ -4,16 +4,16 @@ import moment from 'moment'
 
 function EntryList({ entries }) {
     const [newEntryClicked, setNewEntryClicked] = useState(false)
-    const entriesArr = entries.map( entry => {
+
+    const entriesSortedByDate = entries.sort((a,b) => Date.parse(a.date) - Date.parse(b.date))
+    const entriesArr = entriesSortedByDate.map( entry => {
         return <Entry key={entry.id} entry={entry} />
     })
 
+     
     function handleNewEntryCLick() {
         setNewEntryClicked(newEntryClicked => !newEntryClicked)
     }
-
-    const entriesSortedByDate = entries.sort((a,b) => console.log(a.date))
-
   
     return (
       <div>
