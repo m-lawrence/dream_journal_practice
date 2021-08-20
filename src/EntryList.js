@@ -4,6 +4,11 @@ import moment from 'moment'
 
 function EntryList({ entries }) {
     const [newEntryClicked, setNewEntryClicked] = useState(false)
+    const [formdata, setFormData] = useState({
+        date: "",
+        name: "",
+        content: ""
+    })
 
     const entriesSortedByDate = entries.sort((a,b) => Date.parse(a.date) - Date.parse(b.date))
     const entriesArr = entriesSortedByDate.map( entry => {
@@ -13,6 +18,10 @@ function EntryList({ entries }) {
      
     function handleNewEntryCLick() {
         setNewEntryClicked(newEntryClicked => !newEntryClicked)
+    }
+
+    function handleChange(e) {
+        setFormData({...formdata, [e.target.name]: e.target.value})
     }
   
     return (
@@ -24,11 +33,11 @@ function EntryList({ entries }) {
         {newEntryClicked && 
         <form>
             <label>Date: </label>
-            <input type="date"></input><br></br><br></br>
-            <label type="text">Name: </label>
-            <input></input><br></br><br></br>
+            <input type="date" name="date" value={formdata.date} onChange={handleChange}></input><br></br><br></br>
+            <label>Name: </label>
+            <input type="text" name="name" value={formdata.name} onChange={handleChange}></input><br></br><br></br>
             <label>Content: </label>
-            <input type="textarea"></input>
+            <input type="textarea" name="content" value={formdata.content} onChange={handleChange}></input>
             </form>}
       </div>
     );
