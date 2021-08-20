@@ -2,11 +2,12 @@ import { useLocation } from 'react-router-dom';
 
 function EntryDetails() {
     const location = useLocation()
-   console.log(location.state.params)
+
+   console.log(location)
   
     return (
       <div>
-        Entryyy
+        <p>entry</p>
       </div>
     );
   }
