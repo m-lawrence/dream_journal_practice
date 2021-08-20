@@ -1,7 +1,10 @@
+import { useHistory } from 'react-router-dom';
+
 function Entry({ entry }) {
+    const history = useHistory()
 
     function handleEntryClick() {
-        // route to entry details page
+        history.push(`entry/${entry.id}`, {params: entry})
     }
   
     return (
