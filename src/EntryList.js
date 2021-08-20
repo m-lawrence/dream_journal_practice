@@ -4,7 +4,7 @@ import moment from 'moment'
 
 function EntryList({ entries }) {
     const [newEntryClicked, setNewEntryClicked] = useState(false)
-    const [formdata, setFormData] = useState({
+    const [formData, setFormData] = useState({
         date: "",
         name: "",
         content: ""
@@ -21,7 +21,25 @@ function EntryList({ entries }) {
     }
 
     function handleChange(e) {
-        setFormData({...formdata, [e.target.name]: e.target.value})
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        
+        const newDream = {
+            date: formData.date,
+            name: formData.name,
+            content: formData.content,
+            id: entries.length
+        }
+
+        entries.push(newDream)
+        setFormData({
+            date: "",
+            name: "",
+            content: ""
+        })
     }
   
     return (
@@ -31,13 +49,14 @@ function EntryList({ entries }) {
             <li onClick={handleNewEntryCLick}>New Entry</li>
         </ul>
         {newEntryClicked && 
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Date: </label>
-            <input type="date" name="date" value={formdata.date} onChange={handleChange}></input><br></br><br></br>
+            <input type="date" name="date" value={formData.date} onChange={handleChange}></input><br></br><br></br>
             <label>Name: </label>
-            <input type="text" name="name" value={formdata.name} onChange={handleChange}></input><br></br><br></br>
+            <input type="text" name="name" value={formData.name} onChange={handleChange}></input><br></br><br></br>
             <label>Content: </label>
-            <input type="textarea" name="content" value={formdata.content} onChange={handleChange}></input>
+            <input type="textarea" name="content" value={formData.content} onChange={handleChange}></input>
+            <input type="submit"></input>
             </form>}
       </div>
     );
