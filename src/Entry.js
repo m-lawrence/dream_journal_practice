@@ -5,7 +5,7 @@ function Entry({ entry }) {
     
 
     function handleEntryClick() {
-        history.push(`entry/${entry.id}`, {params: entry})
+        history.push(`./entry/${entry.id}`, {params: entry})
     }
   
     return (

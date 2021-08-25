@@ -45,7 +45,7 @@ function App() {
           <User users={users} />
           <DreamJournal dream_journals={dream_journals} entries={entries}/>
         </Route>
-        <Route exact path='entry/:id'>
+        <Route exact path='/entry/:id'>
           <EntryDetails />
         </Route>
       </Switch>
