@@ -9,6 +9,8 @@ function EntryDetails() {
       <div>
         <h1>{currentEntry.name}</h1>
         <p>{currentEntry.content}</p>
+        <canvas id="test-canvas-1" width="300" height="200">
+        </canvas>
       </div>
     );
   }
