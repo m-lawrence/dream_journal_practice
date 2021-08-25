@@ -1,13 +1,14 @@
 import { useLocation } from 'react-router-dom';
 
 function EntryDetails() {
-    const location = useLocation()
+   const location = useLocation()
 
-   console.log(location)
+   let currentEntry = location.state.params
   
     return (
       <div>
-        <p>entry</p>
+        <h1>{currentEntry.name}</h1>
+        <p>{currentEntry.content}</p>
       </div>
     );
   }
