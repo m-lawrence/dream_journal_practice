@@ -14,4 +14,14 @@ code {
 
 canvas#test-canvas-1 {
   border: 1px solid black;
+  margin-top: 20px;
+  margin-left: 40%;
+}
+
+.entryDetailHeader {
+  text-align: center;
+}
+
+.entryDetailContent {
+  text-align: center;
 }
