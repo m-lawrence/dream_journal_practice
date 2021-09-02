@@ -1,10 +1,6 @@
-import { useLocation } from 'react-router-dom';
 import React, { useRef } from 'react';
 
-function EntryDetails() {
-   const location = useLocation()
-
-   let currentEntry = location.state.params
+function Canvas() {
   
     return (
       <div>
@@ -15,4 +11,4 @@ function EntryDetails() {
     );
   }
   
-  export default EntryDetails;
+  export default Canvas;
