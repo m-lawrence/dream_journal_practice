@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-function Canvas() {
+function Canvas({ currentEntry }) {
   
     return (
       <div>
