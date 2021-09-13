@@ -10,7 +10,7 @@ function Entry({ entry }) {
   
     return (
       <div>
-        <ul>
+        <ul className="entryList">
             <li onClick={handleEntryClick}>{entry.name}</li>
         </ul>
       </div>

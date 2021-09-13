@@ -45,7 +45,7 @@ function EntryList({ entries }) {
     return (
       <div>
         {entriesArr}
-        <ul>
+        <ul className="entryList">
             <li onClick={handleNewEntryCLick}>New Entry</li>
         </ul>
         {newEntryClicked && 
