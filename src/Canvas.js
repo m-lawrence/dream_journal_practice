@@ -2,12 +2,20 @@ import React, { useRef, useEffect } from 'react';
 
 function Canvas({ currentEntry }) {
     const canvasRef = useRef(null)
+
+    const draw = ctx => {
+        ctx.fillStyle = '#000000'
+        ctx.beginPath()
+        ctx.arc(50, 100, 20, 0, 2*Math.PI)
+        ctx.fill()
+    }
+
     useEffect(() => {
         const canvas = canvasRef.current
-        const ctx = canvas.getContext('2d')
-        ctx.fillStyle = '#000000'
-        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-    }, [])
+        const context = canvas.getContext('2d')
+        // context.fillStyle = '#000000'
+        draw(context)
+    }, [draw])
   
     return (
       <div>
