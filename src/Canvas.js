@@ -30,6 +30,7 @@ function Canvas({ currentEntry }) {
         }
         
     }, [draw])
+
   
     return (
       <div>

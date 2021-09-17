@@ -20,6 +20,7 @@ code {
 
 canvas#test-canvas-1 {
   border: 1px solid black;
+  border-radius: 20px;
 }
 
 .entryDetailHeader {

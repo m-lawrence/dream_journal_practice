@@ -3,7 +3,7 @@ function User({ users }) {
   
     return (
       <div>
-        <h1>Welcome, {upcaseUsername}!</h1>
+        <h1>Welcome, {upcaseUsername}!</h1><br></br>
       </div>
     );
   }
