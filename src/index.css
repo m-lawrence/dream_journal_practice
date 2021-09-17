@@ -7,6 +7,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-color: #281661;
+  color: white;
 }
 
 code {
@@ -19,8 +21,9 @@ code {
 }
 
 canvas#test-canvas-1 {
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 20px;
+  background-color: white;
 }
 
 .entryDetailHeader {
