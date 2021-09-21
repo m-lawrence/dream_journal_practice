@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from 'react';
+import useCanvas from './useCanvas'
 
 function Canvas({ currentEntry, draw }) {
-    const canvasRef = useRef(null)
+    // const canvasRef = useRef(null)
+    const canvasRef = useCanvas(draw)
 
     // const draw = (ctx, frameCount) => {
     //     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
@@ -11,25 +13,25 @@ function Canvas({ currentEntry, draw }) {
     //     ctx.fill()
     // }
 
-    useEffect(() => {
-        const canvas = canvasRef.current
-        const context = canvas.getContext('2d')
-        let frameCount = 0
-        let animationFrameId
+    // useEffect(() => {
+    //     const canvas = canvasRef.current
+    //     const context = canvas.getContext('2d')
+    //     let frameCount = 0
+    //     let animationFrameId
 
-        const render = () => {
-            frameCount++
-            draw(context, frameCount)
-            animationFrameId = window.requestAnimationFrame(render)
-        }
+    //     const render = () => {
+    //         frameCount++
+    //         draw(context, frameCount)
+    //         animationFrameId = window.requestAnimationFrame(render)
+    //     }
 
-        render()
+    //     render()
 
-        return () => {
-            window.cancelAnimationFrame(animationFrameId)
-        }
+    //     return () => {
+    //         window.cancelAnimationFrame(animationFrameId)
+    //     }
         
-    }, [draw])
+    // }, [draw])
 
   
     return (
