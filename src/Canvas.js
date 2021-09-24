@@ -39,7 +39,8 @@ function Canvas({ currentEntry, draw }) {
         <h1 className="entryDetailHeader">{currentEntry.name}</h1>
         <p className="entryDetailContent">{currentEntry.content}</p>
         <canvas 
-            ref={canvasRef}
+            ref={canvasRef} 
+            currentEntry={currentEntry}
             id="test-canvas-1" 
             width="300" 
             height="200" 
