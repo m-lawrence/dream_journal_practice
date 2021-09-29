@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import useCanvas from './useCanvas'
 
-function Canvas({ currentEntry, draw }) {
+function Canvas({ currentEntry, draw, options }) {
     // const canvasRef = useRef(null)
-    const canvasRef = useCanvas(draw)
+    const { context, ...moreConfig } = options
+    const canvasRef = useCanvas(draw, { context })
 
     // const draw = (ctx, frameCount) => {
     //     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
