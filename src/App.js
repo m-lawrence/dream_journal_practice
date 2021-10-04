@@ -50,7 +50,15 @@ function App() {
   
   return (
     <div className="App">
-      <Switch>
+      <canvas 
+            id="test-canvas-1" 
+            width="300" 
+            height="200" 
+            onClick={e => {
+                alert(e.clientX)
+                }}
+                />
+      {/* <Switch>
         <Route exact path='/profile'>
           <User users={users} />
           <DreamJournal dream_journals={dream_journals} entries={entries}/>
@@ -58,7 +66,7 @@ function App() {
         <Route exact path='/entry/:id'>
           <EntryDetails draw={draw}/>
         </Route>
-      </Switch>
+      </Switch> */}
     </div>
   );
 }
