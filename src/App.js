@@ -1,4 +1,5 @@
 import './index.css';
+import React from 'react';
 import { users, dream_journals, entries } from './data.js';
 import User from './User';
 import DreamJournal from './DreamJournal';
@@ -36,15 +37,15 @@ function App() {
   //   return true
   // }
 
-  const draw = (ctx, frameCount) => {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-    ctx.fillStyle = '#000000'
-    ctx.beginPath()
-    ctx.arc(50, 100, 20*Math.sin(frameCount*0.05)**2, 0, 2*Math.PI)
-    ctx.fill()
-}
+//   const draw = (ctx, frameCount) => {
+//     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+//     ctx.fillStyle = '#000000'
+//     ctx.beginPath()
+//     ctx.arc(50, 100, 20*Math.sin(frameCount*0.05)**2, 0, 2*Math.PI)
+//     ctx.fill()
+// }
 
-  
+  const canvasRef = React.useRef(null)
 
  
   
@@ -52,10 +53,12 @@ function App() {
     <div className="App">
       <canvas 
             id="test-canvas-1" 
+            ref={canvasRef}
             width="300" 
             height="200" 
             onClick={e => {
-                alert(e.clientX)
+                const canvas = canvasRef.current
+                const ctx = canvas.getContext('2d')
                 }}
                 />
       {/* <Switch>
