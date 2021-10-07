@@ -45,6 +45,7 @@ function App() {
 //     ctx.fill()
 // }
 
+  const [locations, setLocations] = React.useState([])
   const canvasRef = React.useRef(null)
 
   const HOOK_SVG =
@@ -64,7 +65,7 @@ function App() {
 }
 
  
-  
+  console.log(locations)
   return (
     <div className="App">
       <canvas 
@@ -75,7 +76,9 @@ function App() {
             onClick={e => {
                 const canvas = canvasRef.current
                 const ctx = canvas.getContext('2d')
-                draw(ctx, { x:e.clientX, y: e.clientY})
+                const newLocation = { x:e.clientX, y: e.clientY}
+                setLocations([...locations, newLocation])
+                draw(ctx, newLocation)
                 }}
                 />
       {/* <Switch>
